@@ -1,0 +1,178 @@
+html, body, ul, h1 {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+}
+
+nav {
+  background-color: #041624;
+}
+
+nav ul {
+  cursor: pointer;
+  list-style: none;
+  display: inline-block;
+}
+
+nav ul li {
+  display: inline-block;
+}
+
+nav ul li a {
+  text-transform: uppercase;
+  display: inline-block;
+  padding: 25px 20px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+nav ul.right {
+  float: right;
+}
+
+footer {
+  background-color: #041624;
+  color: #25818B;
+  padding: 50px;
+}
+
+footer .footer-grid {
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: 'info links popular social';
+  -ms-grid-columns: 40% 20% 20% 20%;
+      grid-template-columns: 40% 20% 20% 20%;
+}
+
+footer .footer-grid ul {
+  list-style: none;
+}
+
+footer .footer-grid a {
+  color: #25818B;
+  text-decoration: none;
+}
+
+.footer-info {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: info;
+  padding: 0 50px;
+}
+
+.footer-info .footer-description {
+  text-align: justify;
+}
+
+.footer-info .footer-description::first-letter {
+  font-size: 2em;
+  color: #054C5B;
+}
+
+.footer-links {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: links;
+  margin: auto;
+}
+
+.footer-popular {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: popular;
+  margin: auto;
+}
+
+.footer-social {
+  -ms-grid-row: 1;
+  -ms-grid-column: 4;
+  grid-area: social;
+  margin: auto;
+}
+
+.footer-title {
+  display: inline-block;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #ffffff;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  font-size: 1.2em;
+  border-bottom: 1px solid #25818B;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.sitename {
+  color: #25818B;
+  text-transform: uppercase;
+  font-size: .8em;
+}
+
+.register-form {
+  display: inline-block;
+  margin: 100px 0;
+  text-align: center;
+  padding: 50px;
+  border: 3px solid #054C5B;
+  border-radius: 10px;
+}
+
+.input-group {
+  margin: 15px 0;
+  position: relative;
+}
+
+.input-group .input-control {
+  width: 100%;
+  height: 30px;
+  padding-top: 10px;
+  border: none;
+  background-color: #E9F0FD;
+}
+
+.input-group .input-control:focus {
+  outline: none;
+}
+
+.input-group label {
+  text-transform: uppercase;
+  position: absolute;
+  color: grey;
+  font-size: .8em;
+  top: 2px;
+  left: 2px;
+}
+
+.input-control:focus + label {
+  color: #2360C5;
+}
+
+.error {
+  color: red;
+  text-align: start;
+  font-size: .9em;
+}
+
+.btn {
+  padding: 10px 30px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1em;
+}
+
+.btn-primary {
+  background-color: #F64C25;
+  color: #F7F0C0;
+}
+/*# sourceMappingURL=style.css.map */

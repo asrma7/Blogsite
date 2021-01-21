@@ -1,0 +1,153 @@
+@import "color";
+
+html, body, ul, h1 {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+}
+
+// navbar css code here
+
+nav {
+    background-color: $primary;
+    ul {
+        cursor: pointer;
+        list-style: none;
+        display: inline-block;
+        li {
+            display: inline-block;
+            a {
+                text-transform: uppercase;
+                display: inline-block;
+                padding: 25px 20px;
+                color: $white;
+                text-decoration: none;
+            }
+        }
+        &.right {
+            float: right;
+        }
+    }
+}
+
+// footer css here
+
+footer {
+    background-color: $primary;
+    color: $textaccent;
+    padding: 50px;
+    .footer-grid {
+        display: grid;
+        grid-template-areas: 'info links popular social';
+        grid-template-columns: 40% 20% 20% 20%;
+        ul {
+            list-style: none;
+        }
+        a {
+            color: $textaccent;
+            text-decoration: none;
+        }
+    }
+}
+
+.footer-info {
+    grid-area: info;
+    padding: 0 50px;
+    .footer-description {
+        text-align: justify;
+        &::first-letter {
+            font-size: 2em;
+            color: $secondary;
+        }
+    }
+}
+.footer-links {
+    grid-area: links;
+    margin: auto;
+}
+.footer-popular {
+    grid-area: popular;
+    margin: auto;
+}
+.footer-social {
+    grid-area: social;
+    margin: auto;
+}
+.footer-title {
+    display: inline-block;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: $white;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    border-bottom: 1px solid $textaccent;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.sitename {
+    color: $textaccent;
+    text-transform: uppercase;
+    font-size: .8em;
+}
+
+.register-form {
+    display: inline-block;
+    margin: 100px 0;
+    text-align: center;
+    padding: 50px;
+    border: 3px solid $secondary;
+    border-radius: 10px;
+}
+
+.input-group {
+    margin: 15px 0;
+    position: relative;
+    .input-control {
+        width: 100%;
+        height: 30px;
+        padding-top: 10px;
+        border: none;
+        background-color: #E9F0FD;
+        &:focus {
+            outline: none;
+        }
+    }
+    label {
+        text-transform: uppercase;
+        position: absolute;
+        color: grey;
+        font-size: .8em;
+        top: 2px;
+        left: 2px;
+    }
+}
+
+.input-control:focus + label {
+    color: #2360C5;
+}
+
+.error {
+    color: red;
+    text-align: start;
+    font-size: .9em;
+}
+
+.btn {
+    padding: 10px 30px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1em;
+}
+
+.btn-primary {
+    background-color: $btnprimary;
+    color: $btnsecondary;
+}

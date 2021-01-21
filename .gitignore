@@ -1,0 +1,6 @@
+.DS_Store
+vs_code/
+database.sqlite
+test.php
+*.txt
+css/*.css.map
