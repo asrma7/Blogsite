@@ -121,7 +121,7 @@ footer .footer-grid a {
 
 .register-form {
   display: inline-block;
-  margin: 100px 0;
+  margin: 60px 0;
   text-align: center;
   padding: 50px;
   border: 3px solid #054C5B;
@@ -154,8 +154,38 @@ footer .footer-grid a {
   left: 2px;
 }
 
-.input-control:focus + label {
+.input-group.input-control:focus + label {
   color: #2360C5;
+}
+
+.input-checkbox {
+  text-align: start;
+  margin-bottom: 5px;
+}
+
+.input-checkbox .input-control {
+  background-color: #E9F0FD;
+  width: 20px;
+  height: 20px;
+  padding-top: 10px;
+  border: none;
+  outline: none;
+  vertical-align: middle;
+}
+
+.input-checkbox label {
+  line-height: 20px;
+  vertical-align: middle;
+}
+
+.forgotpass {
+  margin-bottom: 15px;
+}
+
+.forgotpass a {
+  color: #25818B;
+  text-decoration: none;
+  font-size: 1.1em;
 }
 
 .error {

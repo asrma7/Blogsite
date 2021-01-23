@@ -1,5 +1,43 @@
 function loginSubmit() {
-
+    event.preventDefault();
+    errors = document.getElementsByClassName('error');
+    inputs = document.getElementsByClassName('input-control');
+    for(let element of inputs) {
+        element.style.border = "none";
+    }
+    for(let element of errors) {
+        element.innerText = "";
+    }
+    user = document.getElementById('user');
+    password = document.getElementById('password');
+    keeploggedin = document.getElementById('keeploggedin');
+    errorHappened = false;
+    if (user.value.length == 0) {
+        error = "Username/Email is required.";
+        user.style.border = "1px solid red";
+        user.parentElement.querySelector('.error').innerText = error;
+        errorHappened = true;
+    }
+    if (password.value.length == 0) {
+        error = "Password is required.";
+        password.style.border = "1px solid red";
+        password.parentElement.querySelector('.error').innerText = error;
+        errorHappened = true;
+    }
+    if(!errorHappened == true) {
+        data = new FormData();
+        data.append('user', user.value);
+        data.append('password', password.value);
+        data.append('keeploggedin', keeploggedin.checked);
+        http = new XMLHttpRequest();
+        http.onreadystatechange = function () {
+            if(this.readyState == 4 && this.status == 200) {
+                alert('Success');
+            }
+        }
+        http.open('POST', 'backend/login.php', true);
+        http.send(data);
+    }
 }
 
 function registerSubmit() {
@@ -63,10 +101,18 @@ function registerSubmit() {
         http = new XMLHttpRequest();
         http.onreadystatechange = function () {
             if(this.readyState == 4 && this.status == 200) {
-                alert('Success');
+                response = JSON.parse(this.responseText);
+                success = response['success'];
+                if(!success){
+                    error = response['error'];
+                    field = response['field'];
+                    element = document.getElementById(field);
+                    element.style.border = "1px solid red";
+                    element.parentElement.querySelector('.error').innerText = error;
+                }
             }
         }
-        http.open('POST', 'registerUser.php', true);
+        http.open('POST', 'backend/register.php', true);
         http.send(data);
     }
 }
