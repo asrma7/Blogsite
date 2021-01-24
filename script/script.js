@@ -32,7 +32,24 @@ function loginSubmit() {
         http = new XMLHttpRequest();
         http.onreadystatechange = function () {
             if(this.readyState == 4 && this.status == 200) {
-                alert('Success');
+                if(this.readyState == 4 && this.status == 200) {
+                    response = JSON.parse(this.responseText);
+                    success = response['success'];
+                    if(!success){
+                        error = response['error'];
+                        field = response['field'];
+                        element = document.getElementById(field);
+                        element.style.border = "1px solid red";
+                        element.parentElement.querySelector('.error').innerText = error;
+                    }
+                    else {
+                        document.getElementById('msg').style.right = 0;
+                        document.getElementById('msg').querySelector('.progress').style.width = '0px';
+                        setTimeout(function() {
+                            window.location.replace("index.php");
+                        }, 3000)
+                    }
+                }
             }
         }
         http.open('POST', 'backend/login.php', true);
@@ -104,11 +121,19 @@ function registerSubmit() {
                 response = JSON.parse(this.responseText);
                 success = response['success'];
                 if(!success){
-                    error = response['error'];
-                    field = response['field'];
-                    element = document.getElementById(field);
-                    element.style.border = "1px solid red";
-                    element.parentElement.querySelector('.error').innerText = error;
+                    errors = response['errors'];
+                    for (error in errors) {
+                        element = document.getElementById(error);
+                        element.style.border = "1px solid red";
+                        element.parentElement.querySelector('.error').innerText = errors[error];
+                    }
+                }
+                else {
+                    document.getElementById('msg').style.right = 0;
+                        document.getElementById('msg').querySelector('.progress').style.width = '0px';
+                        setTimeout(function() {
+                            window.location.replace("login.php");
+                        }, 3000)
                 }
             }
         }

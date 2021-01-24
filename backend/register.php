@@ -5,38 +5,31 @@ $username = $_POST['username'];
 $email = $_POST['email'];
 $password = $_POST['password'];
 $success = false;
+$errors = [];
 
 if (strlen($username) < 6) {
-    $error = "Username must be atleast 6 characters.";
-    $field = "username";
-}
-if (strlen($password) < 8) {
-    $error = "Password must be atleast 8 characters.";
-    $field = "password";
-}
-if (empty($fullname)) {
-    $error = "Fullname is required.";
-    $field = "fullname";
-}
-if (empty($email)) {
-    $error = "Email is required.";
-    $field = "email";
-}
-if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    $error = "Email is not valid.";
-    $field = "email";
-}
-if (!isEmailUnique($email)) {
-    $error = "Email already exists.";
-    $field = "email";
+    $errors += ["username" => "Username must be atleast 6 characters."];
 }
 if (!isUsernameUnique($username)) {
-    $error = "Username already exists.";
-    $field = "username";
+    $errors += ["username" => "Username already exists."];
 }
-if (!isset($error)){
+if (strlen($password) < 8) {
+    $errors += ["password" => "Password must be atleast 8 characters."];
+}
+if (empty($fullname)) {
+    $errors += ["fullname" => "Fullname is required."];
+}
+if (empty($email)) {
+    $errors += ["email" => "Email is required."];
+}
+if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    $errors += ["email" => "Email is not valid."];
+}
+if (!isEmailUnique($email)) {
+    $errors += ["email" => "Email already exists."];
+}
+if (count($errors)==0){
     $encryptedpass = password_hash($password, PASSWORD_DEFAULT);
-    $field = "email";
     $sql = "INSERT INTO users (fullname, username, email, password) VALUES (:fullname, :username, :email, :password)";
     $stmt = $db->prepare($sql);
     $stmt->bindParam(':fullname', $fullname);
@@ -46,7 +39,7 @@ if (!isset($error)){
     $stmt->execute();
     $success = true;
 }
-$response = $success?['success'=>$success]:['success'=>$success, 'error'=>$error, 'field'=>$field];
+$response = $success?['success'=>$success]:['success'=>$success, 'errors'=>$errors];
 echo json_encode($response);
 
 function isEmailUnique($email) {

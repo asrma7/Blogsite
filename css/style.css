@@ -5,6 +5,7 @@ html, body, ul, h1 {
 
 body {
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 nav {
@@ -186,6 +187,30 @@ footer .footer-grid a {
   color: #25818B;
   text-decoration: none;
   font-size: 1.1em;
+}
+
+#msg {
+  background-color: #09c027;
+  color: #ffffff;
+  display: inline-block;
+  padding: 25px 50px;
+  border-bottom-left-radius: 10px;
+  position: absolute;
+  right: -400px;
+  -webkit-transition: right 1s;
+  transition: right 1s;
+}
+
+#msg .progress {
+  position: relative;
+  bottom: -24px;
+  right: 47px;
+  height: 5px;
+  width: 140%;
+  border-bottom-left-radius: 5px;
+  background-color: #054C5B;
+  -webkit-transition: width 3s;
+  transition: width 3s;
 }
 
 .error {

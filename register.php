@@ -1,3 +1,9 @@
+<?php
+session_start();
+if(isset($_SESSION['user'])) {
+    header('Location:index.php');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +14,7 @@
 </head>
 <body>
     <?php require_once "navbar.php";?>
+    <div id="msg">Registered successfully! Login to continue<div class="progress"></div></div>
     <div class="container">
         <div class="register-form">
             <h1>Welcome to <span class="sitename">Blogsite</span></h1>

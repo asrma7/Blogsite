@@ -7,6 +7,7 @@ html, body, ul, h1 {
 
 body {
     min-height: 100vh;
+    overflow-x: hidden;
 }
 
 // navbar css code here
@@ -157,6 +158,26 @@ footer {
         color: $textaccent;
         text-decoration: none;
         font-size: 1.1em;
+    }
+}
+#msg {
+    background-color: $success;
+    color: $white;
+    display: inline-block;
+    padding: 25px 50px;
+    border-bottom-left-radius: 10px;
+    position: absolute;
+    right: -400px;
+    transition: right 1s;
+    .progress {
+        position: relative;
+        bottom: -24px;
+        right: 47px;
+        height: 5px;
+        width: 140%;
+        border-bottom-left-radius: 5px;
+        background-color: $secondary;
+        transition: width 3s;
     }
 }
 
