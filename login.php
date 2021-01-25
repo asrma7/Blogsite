@@ -15,8 +15,8 @@ if(isset($_SESSION['user'])) {
 <body>
     <?php require_once "navbar.php";?>
     <div id="msg">Logged in successfully! Redirecting...<div class="progress"></div></div>
-    <div class="container">
-        <div class="register-form">
+    <div class="center-flex">
+        <div class="login-form">
             <h1>Welcome to <span class="sitename">Blogsite</span></h1>
             <form onsubmit="loginSubmit()">
             <div class="input-group">

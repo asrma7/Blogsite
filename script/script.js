@@ -146,3 +146,24 @@ function isValidEmail(email) {
     const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(String(email).toLowerCase());
 }
+
+dp = document.getElementById('dp');
+dpInput = document.getElementById('dpinput');
+
+dp.onclick = function(){
+    dpInput.click();
+}
+
+dpInput.onchange = () => {
+    selectedFile = dpInput.files[0];
+    if(selectedFile!=null){
+        data = new FormData();
+        data.append('file', selectedFile);
+        http = new XMLHttpRequest();
+        http.onreadystatechange = function() {
+
+        }
+        http.open('POST', 'uploaddp.php');
+        http.send(data);
+    }
+  }

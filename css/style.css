@@ -105,7 +105,7 @@ footer .footer-grid a {
   border-bottom: 1px solid #25818B;
 }
 
-.container {
+.center-flex {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -120,7 +120,7 @@ footer .footer-grid a {
   font-size: .8em;
 }
 
-.register-form {
+.register-form, .login-form {
   display: inline-block;
   margin: 60px 0;
   text-align: center;
@@ -194,7 +194,8 @@ footer .footer-grid a {
   color: #ffffff;
   display: inline-block;
   padding: 25px 50px;
-  border-bottom-left-radius: 10px;
+  border-bottom-left-radius: 5px;
+  overflow: hidden;
   position: absolute;
   right: -400px;
   -webkit-transition: right 1s;
@@ -203,11 +204,11 @@ footer .footer-grid a {
 
 #msg .progress {
   position: relative;
-  bottom: -24px;
-  right: 47px;
-  height: 5px;
-  width: 140%;
-  border-bottom-left-radius: 5px;
+  bottom: -25px;
+  right: 50px;
+  height: 6px;
+  width: 145%;
+  overflow: hidden;
   background-color: #054C5B;
   -webkit-transition: width 3s;
   transition: width 3s;
@@ -229,5 +230,41 @@ footer .footer-grid a {
 .btn-primary {
   background-color: #F64C25;
   color: #F7F0C0;
+}
+
+.container {
+  padding: 100px;
+}
+
+.profile-view {
+  border: 3px solid #054C5B;
+  padding: 50px;
+}
+
+.profile-view .dp {
+  text-align: center;
+}
+
+.profile-view .dp img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.profile-view .details {
+  display: table;
+}
+
+.profile-view .details .userdetail {
+  display: table-row;
+}
+
+.profile-view .details .userdetail .title, .profile-view .details .userdetail .value {
+  display: table-cell;
+  padding: 10px;
+}
+
+#dpinput {
+  display: none;
 }
 /*# sourceMappingURL=style.css.map */

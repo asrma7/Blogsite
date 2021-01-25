@@ -88,7 +88,7 @@ footer {
     border-bottom: 1px solid $textaccent;
 }
 
-.container {
+.center-flex {
     display: flex;
     justify-content: center;
 }
@@ -99,7 +99,7 @@ footer {
     font-size: .8em;
 }
 
-.register-form {
+.register-form, .login-form {
     display: inline-block;
     margin: 60px 0;
     text-align: center;
@@ -165,17 +165,18 @@ footer {
     color: $white;
     display: inline-block;
     padding: 25px 50px;
-    border-bottom-left-radius: 10px;
+    border-bottom-left-radius: 5px;
+    overflow: hidden;
     position: absolute;
     right: -400px;
     transition: right 1s;
     .progress {
         position: relative;
-        bottom: -24px;
-        right: 47px;
-        height: 5px;
-        width: 140%;
-        border-bottom-left-radius: 5px;
+        bottom: -25px;
+        right: 50px;
+        height: 6px;
+        width: 145%;
+        overflow: hidden;
         background-color: $secondary;
         transition: width 3s;
     }
@@ -197,4 +198,35 @@ footer {
 .btn-primary {
     background-color: $btnprimary;
     color: $btnsecondary;
+}
+
+.container {
+    padding: 100px;
+}
+
+.profile-view {
+    border: 3px solid $secondary;
+    padding: 50px;
+    .dp {
+        text-align: center;
+        img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+    }
+    .details {
+        display: table;
+        .userdetail {
+            display: table-row;
+            .title, .value {
+                display: table-cell;
+                padding: 10px;
+        }
+        }
+    }
+}
+
+#dpinput {
+    display: none;
 }
