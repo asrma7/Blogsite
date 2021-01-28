@@ -114,6 +114,15 @@ footer .footer-grid a {
           justify-content: center;
 }
 
+.spaced-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
 .sitename {
   color: #25818B;
   text-transform: uppercase;
@@ -220,16 +229,39 @@ footer .footer-grid a {
   font-size: .9em;
 }
 
-.btn {
-  padding: 10px 30px;
+.btn, .btn-sm {
   border: none;
   border-radius: 10px;
   font-size: 1.1em;
+  -webkit-box-shadow: 3px 3px 5px #333333;
+          box-shadow: 3px 3px 5px #333333;
+}
+
+.btn:focus, .btn-sm:focus {
+  outline: none;
+}
+
+.btn:active, .btn-sm:active {
+  -webkit-box-shadow: 3px 3px 3px #333333;
+          box-shadow: 3px 3px 3px #333333;
+}
+
+.btn {
+  padding: 10px 30px;
+}
+
+.btn-sm {
+  padding: 10px;
 }
 
 .btn-primary {
   background-color: #F64C25;
   color: #F7F0C0;
+}
+
+.btn-secondary {
+  color: #F64C25;
+  background-color: #F7F0C0;
 }
 
 .container {

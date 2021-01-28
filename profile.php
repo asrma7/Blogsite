@@ -21,14 +21,14 @@ else {
         <div class="center-flex">
             <div class="profile-view">
                 <div class="dp">
-                    <img src="<?php echo $user['dp']??"resources/images/placeholderuser.png";?>" alt="userdp" id="dp">
-                    <input type="file" name="dpinput" id="dpinput">
+                    <img src="<?php echo $user['dp']??"resources/images/placeholderuser.png";?>" alt="userdp">
                 </div>
                 <table class="details">
-                    <tr class="userdetail"><td class="title">Fullname</td><td class="value"><?php echo $user['fullname'];?></td></tr>
-                    <tr class="userdetail"><td class="title">Username</td><td class="value"><?php echo $user['username'];?></td></tr>
-                    <tr class="userdetail"><td class="title">Email</td><td class="value"><?php echo $user['email'];?></td></tr>
+                    <tr class="userdetail"><td class="title">Fullname</td><td class="value"><?= $user['fullname'];?></td></tr>
+                    <tr class="userdetail"><td class="title">Username</td><td class="value"><?= $user['username'];?></td></tr>
+                    <tr class="userdetail"><td class="title">Email</td><td class="value"><?= $user['email'];?></td></tr>
                 </table>
+                <div class="spaced-flex"><a href="editprofile.php"><button class="btn-sm btn-primary">Edit Profile</button></a><a href="changepass.php"><button class="btn-sm btn-secondary">Edit Password</button></a></div>
             </div>
         </div>
     </div>

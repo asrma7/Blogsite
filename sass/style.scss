@@ -92,6 +92,10 @@ footer {
     display: flex;
     justify-content: center;
 }
+.spaced-flex {
+    display: flex;
+    justify-content: space-evenly;
+}
 
 .sitename {
     color: $textaccent;
@@ -188,16 +192,34 @@ footer {
     font-size: .9em;
 }
 
-.btn {
-    padding: 10px 30px;
+.btn, .btn-sm {
     border: none;
     border-radius: 10px;
     font-size: 1.1em;
+    box-shadow: 3px 3px 5px $grey;
+    &:focus {
+        outline: none;
+    }
+    &:active {
+        box-shadow: 3px 3px 3px $grey;
+    }
+}
+
+.btn {
+    padding: 10px 30px;
+}
+
+.btn-sm {
+    padding: 10px;
 }
 
 .btn-primary {
     background-color: $btnprimary;
     color: $btnsecondary;
+}
+.btn-secondary {
+    color: $btnprimary;
+    background-color: $btnsecondary;
 }
 
 .container {
